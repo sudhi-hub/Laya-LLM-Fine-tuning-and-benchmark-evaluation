@@ -1,0 +1,98 @@
+{
+  "benchmark": "LocalLLaMA/typed-decisions",
+  "model": "Laya V2 (Fine-Tuned 2xT4)",
+  "n_cases": 400,
+  "n_decisions": 2000,
+  "metrics": {
+    "accuracy": 0.7785,
+    "soft_accuracy": 0.6176,
+    "brier_score": 0.0896,
+    "ece": 0.0191,
+    "score_mae": 0.2654,
+    "within_1_level": 0.9862,
+    "latency_p50_ms": 110.7,
+    "latency_p95_ms": 148.5,
+    "kl_divergence": NaN,
+    "total_variation": 0.1758
+  },
+  "comparison": [
+    {
+      "Model": "TypeSafe Jev 1.13.0",
+      "Kind": "general",
+      "Accuracy": 0.727,
+      "Soft Acc": 0.58,
+      "Brier": 0.148,
+      "ECE": 0.144,
+      "Score MAE": 0.391,
+      "Within 1 Level": "0.952",
+      "ms/case": 710,
+      "Cost/Case": "$0.0004 (API)"
+    },
+    {
+      "Model": "Laya V2 (Fine-Tuned 2xT4)",
+      "Kind": "fine-tuned",
+      "Accuracy": 0.778,
+      "Soft Acc": 0.618,
+      "Brier": 0.09,
+      "ECE": 0.019,
+      "Score MAE": 0.265,
+      "Within 1 Level": "0.986",
+      "ms/case": 110.7,
+      "Cost/Case": "$0.00 (Self-Hosted)"
+    },
+    {
+      "Model": "Laya V1 (previous run)",
+      "Kind": "fine-tuned",
+      "Accuracy": 0.764,
+      "Soft Acc": 0.534,
+      "Brier": 0.059,
+      "ECE": 0.223,
+      "Score MAE": 0.317,
+      "Within 1 Level": "0.990",
+      "ms/case": 143.4,
+      "Cost/Case": "$0.00 (Self-Hosted)"
+    },
+    {
+      "Model": "ModernBERT-base (149M)",
+      "Kind": "specialist",
+      "Accuracy": 0.646,
+      "Soft Acc": 0.542,
+      "Brier": 0.119,
+      "ECE": 0.179,
+      "Score MAE": 0.444,
+      "Within 1 Level": "0.931",
+      "ms/case": 349,
+      "Cost/Case": "$0.00"
+    },
+    {
+      "Model": "Teacher Self-Agreement",
+      "Kind": "ceiling",
+      "Accuracy": 0.735,
+      "Soft Acc": "-",
+      "Brier": "-",
+      "ECE": "-",
+      "Score MAE": "-",
+      "Within 1 Level": "-",
+      "ms/case": "-",
+      "Cost/Case": "-"
+    }
+  ],
+  "per_workflow": {
+    "agent_trace_observability": {
+      "n_decisions": 500,
+      "accuracy": 0.762
+    },
+    "customer_service": {
+      "n_decisions": 500,
+      "accuracy": 0.768
+    },
+    "invoice_processing": {
+      "n_decisions": 500,
+      "accuracy": 0.824
+    },
+    "security_incidents": {
+      "n_decisions": 500,
+      "accuracy": 0.76
+    }
+  }
+}
